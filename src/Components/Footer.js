@@ -18,9 +18,9 @@ const Footer = () => {
                     <Col md={4} className="text-right">
                         <Nav className="justify-content-end">
                             <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#membershipDetails">Membership Details</Nav.Link>
-                            <Nav.Link href="#listings">Listings</Nav.Link>
-                            <Nav.Link href="#gildedCollection">Gilded Collection</Nav.Link>
+                            <Nav.Link href="#merchandise">Merchandise</Nav.Link>
+                            <Nav.Link href="#cart">Cart</Nav.Link>
+                            <Nav.Link href="#contactUs">Contact us</Nav.Link>
                         </Nav>
                     </Col>
                 </Row>
