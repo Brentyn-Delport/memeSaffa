@@ -2,8 +2,21 @@
 
 import React from 'react';
 import { Container, Navbar, Nav, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { showSignInModal, showRegisterModal } from '../redux/modalActions'; // Adjust the path as needed
+import { useSelector } from 'react-redux'; // Import useSelector
 
-const Header = ({ isLoggedIn, username }) => {
+
+
+
+const Header = () => {
+    const dispatch = useDispatch();    
+        // Retrieve isLoggedIn and username from the Redux state
+        const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
+        const username = useSelector(state => state.auth.username);
+    
+    
     return (
 <Navbar bg="white" expand="lg">
             <Container>
@@ -19,8 +32,8 @@ const Header = ({ isLoggedIn, username }) => {
                             />
                         </Navbar.Brand>
                         <Nav className="flex-row">
-                            <Nav.Link href="#signIn">Sign In</Nav.Link>
-                            <Nav.Link href="#register">Register</Nav.Link>
+                        <Nav.Link onClick={() => dispatch(showSignInModal())}>Sign In</Nav.Link>
+                <Nav.Link onClick={() => dispatch(showRegisterModal())}>Register</Nav.Link>
                         </Nav>
                     </Col>
                     <Col md={8} className="text-right">
