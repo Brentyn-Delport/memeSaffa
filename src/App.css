@@ -14,3 +14,17 @@
   background-color: #f8f9fa; 
 }
 
+/* Add to your CSS file */
+.zoom-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Adjust size as needed */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  border-radius: 50%; /* Circular shape */
+}
+
+.card-img-top:hover + .zoom-overlay {
+  visibility: visible; /* Only show when the image is hovered */
+}

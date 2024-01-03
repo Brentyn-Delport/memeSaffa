@@ -32,14 +32,15 @@ const Header = () => {
                             />
                         </Navbar.Brand>
                         <Nav className="flex-row">
-                        <Nav.Link onClick={() => dispatch(showSignInModal())}>Sign In</Nav.Link>
-                <Nav.Link onClick={() => dispatch(showRegisterModal())}>Register</Nav.Link>
+                        <Nav.Link onClick={() => dispatch(showSignInModal())}>Sign In </Nav.Link>
+
+                <Nav.Link onClick={() => dispatch(showRegisterModal())}> Register</Nav.Link>
                         </Nav>
                     </Col>
                     <Col md={8} className="text-right">
                         <Nav className="justify-content-end">
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#merchandise">Merchandise</Nav.Link>
+                        <Link to="/" className="nav-link">Home</Link>
+                        <Link to="/merchandise" className="nav-link">Merchandise</Link>
                             <Nav.Link href="#cart">Cart</Nav.Link>
                             <Nav.Link href="#contactUs">Contact us</Nav.Link>
                         </Nav>

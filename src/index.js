@@ -6,7 +6,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import '@fortawesome/fontawesome-free/css/fontawesome.css';
+import '@fortawesome/fontawesome-free/css/solid.css'; // for solid icons
+import '@fortawesome/fontawesome-free/css/regular.css'; // for regular icons
+import '@fortawesome/fontawesome-free/css/brands.css'; // for brand icons
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

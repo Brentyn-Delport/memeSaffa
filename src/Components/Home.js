@@ -76,8 +76,9 @@ const Home = () => {
                             </Card>
                         </Col>
                     ))}
-                                                        <Button variant="primary" href="#merchandise">View our products</Button>
-
+                            <Link to="/merchandise">
+                    <Button variant="primary">View our products</Button>
+                </Link>
                 </Row>
             </Container>
 
