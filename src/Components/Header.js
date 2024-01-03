@@ -34,10 +34,15 @@ const Header = () => {
                             />
                         </Navbar.Brand>
                         <Nav className="flex-row">
-                        <Nav.Link onClick={() => dispatch(showSignInModal())}>Sign In </Nav.Link>
-
-                <Nav.Link onClick={() => dispatch(showRegisterModal())}> Register</Nav.Link>
+                            {/* Conditionally render links based on isLoggedIn */}
+                            {!isLoggedIn && (
+                                <>
+                                    <Nav.Link onClick={() => dispatch(showSignInModal())}>Sign In</Nav.Link>
+                                    <Nav.Link onClick={() => dispatch(showRegisterModal())}>Register</Nav.Link>
+                                </>
+                            )}
                         </Nav>
+
                     </Col>
                     <Col md={8} className="text-right">
                         <Nav className="justify-content-end">

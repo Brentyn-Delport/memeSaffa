@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Card, Button, Modal, Form, ButtonGroup} from 'react-bootstrap';
 import ProductDetails from './ProductDetails'; 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux'; 
 import { addItem } from '../redux/cartActions';
 
 const ProductCard = ({ product }) => {
@@ -13,14 +13,22 @@ const ProductCard = ({ product }) => {
     const [selectedShipping, setSelectedShipping] = useState(''); // Initialize with an empty string
     const [showModal, setShowModal] = useState(false); // State to control modal visibility
     const dispatch = useDispatch();
+    const isLoggedIn = useSelector(state => state.auth.isLoggedIn); // Get login state
+    const [showAlert, setShowAlert] = useState(false); // State for showing alert if not logged in
+
 
     // Function to handle image click for zooming
     const handleImageClick = () => {
         setShowZoomModal(true);
     };
 
- // Function to handle adding item to cart
- const handleAddToCart = () => {
+// Function to handle adding item to cart
+const handleAddToCart = () => {
+    if (!isLoggedIn) {
+        setShowAlert(true); // Show alert if not logged in
+        return;
+    }
+
     dispatch(addItem({
         product,
         quantity,
@@ -28,6 +36,7 @@ const ProductCard = ({ product }) => {
         deliveryOption: selectedShipping,
     }));
 };
+
 
     return (
         <Card className="mb-4">
@@ -150,7 +159,19 @@ const ProductCard = ({ product }) => {
 
 
 <Button variant="primary" onClick={handleAddToCart}>Add to Cart</Button>
-
+{/* Alert Modal for login requirement */}
+<Modal show={showAlert} onHide={() => setShowAlert(false)}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Sign In Required</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <p>Please sign in or register to add items to your cart.</p>
+                    <div className="d-flex justify-content-between mt-3">
+                        <Button variant="secondary" onClick={() => dispatch(showSignInModal())}>Sign In</Button>
+                        <Button variant="primary" onClick={() => dispatch(showRegisterModal())}>Register</Button>
+                    </div>
+                </Modal.Body>
+            </Modal>
             </Card.Body>
         </Card>
     );

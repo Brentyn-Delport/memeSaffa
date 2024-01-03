@@ -1,7 +1,7 @@
 // Footer.js
 
 import React from 'react';
-import { Container, Row, Col, Nav } from 'react-bootstrap';
+import { Container, Navbar, Nav, Row, Col, Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux'; // Import useSelector
 

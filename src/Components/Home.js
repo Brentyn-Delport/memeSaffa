@@ -39,7 +39,7 @@ const Home = () => {
                 <Row>
                     <Col md={12}>
                         <h2>Top Memes</h2>
-                        <Carousel interval={3000}>
+                        <Carousel interval={4000}>
                             {/* Slicing memes array into groups of 3 for the carousel */}
                             {Array.from({ length: 4 }).map((_, groupIndex) => (
                                 <Carousel.Item key={groupIndex}>
