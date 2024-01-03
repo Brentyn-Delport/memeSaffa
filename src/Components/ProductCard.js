@@ -1,7 +1,9 @@
 // ProductCard.js
 import React, { useState } from 'react';
 import { Card, Button, Modal, Form, ButtonGroup} from 'react-bootstrap';
-import ProductDetails from './ProductDetails'; // Make sure the path is correct
+import ProductDetails from './ProductDetails'; 
+import { useDispatch } from 'react-redux';
+import { addItem } from '../redux/cartActions';
 
 const ProductCard = ({ product }) => {
     const [isHovered, setIsHovered] = useState(false);  // State to manage hover effect
@@ -10,12 +12,22 @@ const ProductCard = ({ product }) => {
     const [quantity, setQuantity] = useState(1); // Initialize with 1
     const [selectedShipping, setSelectedShipping] = useState(''); // Initialize with an empty string
     const [showModal, setShowModal] = useState(false); // State to control modal visibility
+    const dispatch = useDispatch();
 
     // Function to handle image click for zooming
     const handleImageClick = () => {
         setShowZoomModal(true);
     };
 
+ // Function to handle adding item to cart
+ const handleAddToCart = () => {
+    dispatch(addItem({
+        product,
+        quantity,
+        size: selectedSize,
+        deliveryOption: selectedShipping,
+    }));
+};
 
     return (
         <Card className="mb-4">
@@ -66,9 +78,9 @@ const ProductCard = ({ product }) => {
                     <h6>Shipping Method: <span onClick={() => setShowModal(true)}>ℹ️</span></h6>
                     <Form>
                         {[
-                            { name: 'Post Net', value: 'postNet' },
-                            { name: 'Pargo', value: 'pargo' },
-                            { name: 'Budget Courier', value: 'budgetCourier' },
+                            { name: 'Post Net', value: 'Post Net' },
+                            { name: 'Pargo', value: 'Pargo' },
+                            { name: 'Budget Courier', value: 'Budget Courier' },
 
                             // ...other shipping methods...
                         ].map(method => (
@@ -137,8 +149,8 @@ const ProductCard = ({ product }) => {
 
 
 
-                {/* Add more interactive elements like buttons, size selectors, etc., here */}
-                {/* ... */}
+<Button variant="primary" onClick={handleAddToCart}>Add to Cart</Button>
+
             </Card.Body>
         </Card>
     );

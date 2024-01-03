@@ -1,7 +1,7 @@
 // Header.js
 
 import React from 'react';
-import { Container, Navbar, Nav, Row, Col } from 'react-bootstrap';
+import { Container, Navbar, Nav, Row, Col, Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { showSignInModal, showRegisterModal } from '../redux/modalActions'; // Adjust the path as needed
@@ -16,7 +16,9 @@ const Header = () => {
         const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
         const username = useSelector(state => state.auth.username);
     
-    
+      // Access cart items from Redux store
+      const cartItemsCount = useSelector(state => state.cart.items.length);
+      
     return (
 <Navbar bg="white" expand="lg">
             <Container>
@@ -41,7 +43,14 @@ const Header = () => {
                         <Nav className="justify-content-end">
                         <Link to="/" className="nav-link">Home</Link>
                         <Link to="/merchandise" className="nav-link">Merchandise</Link>
-                            <Nav.Link href="#cart">Cart</Nav.Link>
+                        <Link to="/cart" className="nav-link">
+                        Cart
+                        {cartItemsCount > 0 && (
+                            <Badge pill bg="danger" className="ms-0">
+                                {cartItemsCount} {/* Display number of items */}
+                            </Badge>
+                        )}
+                    </Link>
                             <Nav.Link href="#contactUs">Contact us</Nav.Link>
                         </Nav>
                         {isLoggedIn && <p className="username-display">{username}</p>}

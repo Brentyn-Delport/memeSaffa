@@ -3,8 +3,23 @@ import React from 'react';
 import ProductCard from './ProductCard';  // Make sure the path is correct
 import { Container, Row, Col } from 'react-bootstrap';
 import products from './productData';  // Make sure the path is correct
+import { useDispatch } from 'react-redux';
+import { addItem } from '../redux/cartActions';  // Adjust path as needed
+
 
 const Merchandise = () => {
+    const dispatch = useDispatch();
+
+    // Example function to handle adding items to cart with user selections
+    const handleAddToCart = (product, quantity, size, deliveryOption) => {
+        dispatch(addItem({
+            ...product,
+            quantity,
+            size,
+            deliveryOption,
+        }));
+    };
+    
     return (
         <Container>
             {/* "This month's top hits" section */}

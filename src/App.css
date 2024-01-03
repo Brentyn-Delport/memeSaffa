@@ -28,3 +28,10 @@
 .card-img-top:hover + .zoom-overlay {
   visibility: visible; /* Only show when the image is hovered */
 }
+
+/* Styling notification badge */
+.nav-link .badge {
+  position: relative;
+  top: -10px; /* Adjust as needed */
+  right: -10px; /* Adjust as needed */
+}
