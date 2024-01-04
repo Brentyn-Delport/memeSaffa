@@ -10,6 +10,7 @@ import Header from './Components/Header';
 import Home from './Components/Home';
 import Merchandise from './Components/Merchandise'; // Make sure this is correct
 import Cart from './Components/Cart'; // Import Cart component
+import ContactPage from './Components/Contact';
 import Footer from './Components/Footer'; // Adjust path as necessary
 import './App.css'; 
 
@@ -24,6 +25,8 @@ function App() {
             <Route path="/merchandise" element={<Merchandise />} />
             <Route path="/merchandise" element={<Merchandise />} />
             <Route path="/cart" element={<Cart />} /> {/* Add route for Cart */}
+            <Route path="/contactpage" element={<ContactPage />} /> {/* Add route for Cart */}
+
             {/* Add other routes as needed */}
         </Routes>
         <SignIn />

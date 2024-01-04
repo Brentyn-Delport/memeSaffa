@@ -56,7 +56,7 @@ const Header = () => {
                             </Badge>
                         )}
                     </Link>
-                            <Nav.Link href="#contactUs">Contact us</Nav.Link>
+                    <Link to="/contactpage" className="nav-link">Contact</Link>
                         </Nav>
                         {isLoggedIn && <p className="username-display">{username}</p>}
                     </Col>

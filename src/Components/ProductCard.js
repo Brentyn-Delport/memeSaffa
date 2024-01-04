@@ -4,6 +4,7 @@ import { Card, Button, Modal, Form, ButtonGroup} from 'react-bootstrap';
 import ProductDetails from './ProductDetails'; 
 import { useDispatch, useSelector } from 'react-redux'; 
 import { addItem } from '../redux/cartActions';
+import { showSignInModal, showRegisterModal } from '../redux/modalActions';
 
 const ProductCard = ({ product }) => {
     const [isHovered, setIsHovered] = useState(false);  // State to manage hover effect
@@ -170,6 +171,7 @@ const handleAddToCart = () => {
                         <Button variant="secondary" onClick={() => dispatch(showSignInModal())}>Sign In</Button>
                         <Button variant="primary" onClick={() => dispatch(showRegisterModal())}>Register</Button>
                     </div>
+
                 </Modal.Body>
             </Modal>
             </Card.Body>
