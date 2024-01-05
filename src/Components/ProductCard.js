@@ -149,7 +149,7 @@ const handleAddToCart = () => {
     </Modal.Header>
     <Modal.Body>
         <img 
-            src={product.image} 
+            src={product.hoverImage} 
             alt="Zoomed product" 
             className="img-fluid" 
             style={{maxWidth: '100%', height: 'auto'}} 

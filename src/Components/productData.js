@@ -2,7 +2,7 @@
 
 import { Form } from "react-router-dom";
 
-import memeFront1 from '../Images/1memeFront.jpeg';
+import memeFront from '../Images/memeFront.jpeg';
 import memeBack1 from '../Images/1memeBack.jpeg';
 import memeBack2 from '../Images/2memeBack.jpeg';
 import memeBack3 from '../Images/3memeBack.jpeg';
@@ -15,104 +15,103 @@ import memeBack9 from '../Images/9memeBack.jpeg';
 import memeBack10 from '../Images/10memeBack.jpeg';
 import memeBack11 from '../Images/11memeBack.jpeg';
 
-
 const products = [
     // Array of product objects
     {
         id: 1,
-        image: memeFront1,
+        image: memeFront,
         hoverImage: memeBack1,
-        description: 'Race Week?',
+        description: 'One Brandy?',
         color: 'White',
         price: 100,
     },
     
     {
         id: 2,
-        image: memeFront2,
+        image: memeFront,
         hoverImage: memeBack2,
-        description: 'Red Bull Dominance',
+        description: 'Tenderprenuer?',
         color: 'White',
         price: 100,
     },
 
     {
         id: 3,
-        image: memeFront3,
+        image: memeFront,
         hoverImage: memeBack3,
-        description: 'Alonso Retiring?',
+        description: 'You all get loadshedding!?',
         color: 'White',
         price: 100,
     },
 
     {
         id: 4,
-        image: memeFront4,
+        image: memeFront,
         hoverImage: memeBack4,
-        description: 'Ferrari Fan?',
+        description: 'Eskom Se...!',
         color: 'White',
         price: 100,
     },
 
     {
         id: 5,
-        image: memeFront5,
+        image: memeFront,
         hoverImage: memeBack5,
-        description: 'Merc Engineers',
+        description: 'Tannie',
         color: 'White',
         price: 100,
     },
 
     {
         id: 6,
-        image: memeFront6,
+        image: memeFront,
         hoverImage: memeBack6,
-        description: 'Red Bull Dominance',
+        description: 'Dezemba',
         color: 'White',
         price: 100,
     },
 
     {
         id: 7,
-        image: memeFront7,
+        image: memeFront,
         hoverImage: memeBack7,
-        description: 'Abu Dhabi 21',
+        description: 'Now Now',
         color: 'White',
         price: 100,
     },
 
     {
         id: 8,
-        image: memeFront8,
+        image: memeFront,
         hoverImage: memeBack8,
-        description: 'McClaren no no',
+        description: 'Bunny',
         color: 'White',
         price: 100,
     },
 
     {
         id: 9,
-        image: memeFront9,
+        image: memeFront,
         hoverImage: memeBack9,
-        description: 'Blah',
+        description: 'Braai?',
         color: 'White',
         price: 100,
     },
 
     {
         id: 10,
-        image: memeFront10,
+        image: memeFront,
         hoverImage: memeBack10,
-        description: 'Ferarri Fan',
+        description: 'Eskom Engineers',
         color: 'White',
         price: 100,
     },
 
     {
         id: 11,
-        image: memeFront11,
+        image: memeFront,
         hoverImage: memeBack11,
-        description: 'Albert TOTO Einstein',
+        description: 'Robots',
         color: 'White',
         price: 100,
     },

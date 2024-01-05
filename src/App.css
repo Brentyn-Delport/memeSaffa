@@ -43,5 +43,21 @@
 }
 
 .d-block {
-  height: 350px;
+  height: 450px;
 }
+
+  /* Styling the headers with ZA flag colours */
+.colored-h2 {
+  font-size: 24px; /* Adjust the font size as needed */
+}
+
+/* Styling the gold stars in Home.js */
+.product-rating {
+  display: flex;
+  align-items: center; /* Vertically center the content */
+}
+
+.gold-star {
+  color: gold; /* Set the star color to gold */
+}
+
