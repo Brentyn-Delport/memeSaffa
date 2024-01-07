@@ -88,7 +88,7 @@ const Home = () => {
               {memes.map((meme, idx) => (
                 <Carousel.Item key={idx}>
                   <img
-                    className="d-block w-100" // Ensuring the image takes the full width
+                    className="carousel-image"
                     src={meme}
                     alt={`Meme ${idx + 1}`}
                   />
