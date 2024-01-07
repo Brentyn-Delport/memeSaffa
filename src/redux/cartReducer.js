@@ -1,4 +1,5 @@
 // cartReducer.js
+// This file contains the reducer for handling shopping cart-related state.
 
 const initialState = {
     items: [], // Array of product items
@@ -22,17 +23,17 @@ const cartReducer = (state = initialState, action) => {
                 updatedItems[existingItemIndex] = updatedItem;
                 itemTotalPrice = updatedItem.product.price * updatedItem.quantity;
             } else {
-                // Add new item to cart
+                // Add a new item to the cart
                 updatedItems.push({
                     product,
                     quantity,
                     size,
                     deliveryOption
                 });
-                itemTotalPrice = product.price * quantity;  // Calculate price for this new item
+                itemTotalPrice = product.price * quantity;  // Calculate the price for this new item
             }
 
-            // Calculate new total price
+            // Calculate the new total price
             const newTotal = state.totalPrice + itemTotalPrice;
             return {
                 ...state,
@@ -41,10 +42,10 @@ const cartReducer = (state = initialState, action) => {
             };
         }
         case 'REMOVE_ITEM': {
-            const itemId = action.payload;  // Assuming payload is the item id
+            const itemId = action.payload;  
             const remainingItems = state.items.filter(item => item.product.id !== itemId);
             
-            // Calculate new total price
+            // Calculate the new total price
             const updatedTotal = remainingItems.reduce((acc, item) => acc + (item.product.price * item.quantity), 0);
             return {
                 ...state,

@@ -1,8 +1,11 @@
 // store.js
-import { createStore } from 'redux';
-import rootReducer from './rootReducer'; // Adjust the path to your rootReducer
+// This file configures the Redux store with the root reducer.
 
-const store = createStore(rootReducer);
+import { configureStore } from '@reduxjs/toolkit';
+import rootReducer from './rootReducer'; // Import the rootReducer
+
+const store = configureStore({
+  reducer: rootReducer, // Set the rootReducer as the store's reducer
+});
 
 export default store;
-

@@ -1,4 +1,4 @@
-// actionTypes.js
+// actionTypes.js: This file defines the constants for action types used across the Redux application to ensure consistency and avoid typos.
 
 // Modal action types
 export const SHOW_SIGN_IN_MODAL = 'SHOW_SIGN_IN_MODAL';

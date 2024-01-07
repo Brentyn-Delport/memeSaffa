@@ -1,41 +1,46 @@
-// App.js 
+// App.js
+// This is the main application file for my Meme themed merchandise website.
+// It sets up routing for the entire application using React Router and includes global components like Header and Footer.
+// It is responsible for defining the navigation structure and rendering the main page components based on the current route.
 
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { showSignInModal, showRegisterModal, hideModal } from '../src/redux/modalActions'; 
-import SignIn from './Components/SignIn'; // Adjust the path as necessary
-import Register from './Components/Register'; // Adjust the path as necessary
-import Header from './Components/Header';
-import Home from './Components/Home';
-import Merchandise from './Components/Merchandise'; // Make sure this is correct
-import Cart from './Components/Cart'; // Import Cart component
-import ContactPage from './Components/Contact';
-import Footer from './Components/Footer'; // Adjust path as necessary
-import './App.css'; 
+import SignIn from './Components/SignIn'; // Component for user sign in
+import Register from './Components/Register'; // Component for user registration
+import Header from './Components/Header'; // Global Header component
+import Home from './Components/Home'; // Home page component
+import Merchandise from './Components/Merchandise'; // Merchandise page component
+import Cart from './Components/Cart'; // Shopping cart component
+import Checkout from './Components/Checkout'; // Checkout page component
+import ContactPage from './Components/Contact'; // Contact page component
+import Footer from './Components/Footer'; // Global Footer component
+import './App.css'; // Application-wide styles
 
 function App() {
-  const dispatch = useDispatch();
-
   return (
     <Router>
+        {/* Header is displayed across all routes */}
         <Header />
-        <Routes> {/* Define each Route within Routes */}
+        {/* Routes define different pages based on the URL path */}
+        <Routes> 
+            {/* Route for the Home page */}
             <Route path="/" element={<Home />} />
+            {/* Route for the Merchandise page */}
             <Route path="/merchandise" element={<Merchandise />} />
-            <Route path="/merchandise" element={<Merchandise />} />
-            <Route path="/cart" element={<Cart />} /> {/* Add route for Cart */}
-            <Route path="/contactpage" element={<ContactPage />} /> {/* Add route for Cart */}
-
-            {/* Add other routes as needed */}
+            {/* Route for the Cart page */}
+            <Route path="/cart" element={<Cart />} />
+            {/* Route for the Checkout page */}
+            <Route path="/checkout" element={<Checkout />} />
+            {/* Route for the Contact page */}
+            <Route path="/contactpage" element={<ContactPage />} />
         </Routes>
+        {/* SignIn and Register Modals that can be triggered from anywhere in the app */}
         <SignIn />
         <Register />
+        {/* Footer is displayed across all routes */}
         <Footer /> 
     </Router>
-);
+  );
 }
 
 export default App;
-
-

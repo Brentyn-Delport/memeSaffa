@@ -1,8 +1,10 @@
 // ProductDetails.js
+// This component is responsible for displaying detailed information about a single product.
 
 import React from 'react';
 
-// This component receives the product as a prop and displays its details
+// Functional Component for Product Details
+// It takes a single product object as a prop and displays various attributes of the product.
 const ProductDetails = ({ product }) => {
     return (
         <div className="product-details">
@@ -12,9 +14,8 @@ const ProductDetails = ({ product }) => {
             {/* Display the color of the product */}
             <p>Color: {product.color}</p>
 
-            {/* Display the price of the product */}
+            {/* Display the price of the product, prefixed with the South African Rand symbol */}
             <p>Price: R{product.price}</p>
-            {/* You can expand with more details such as size, material, etc. */}
         </div>
     );
 };

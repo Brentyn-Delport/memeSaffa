@@ -1,4 +1,5 @@
 // cartActions.js
+// This file contains action creators for managing shopping cart actions.
 
 export const addItem = (item) => {
     return {
@@ -13,5 +14,3 @@ export const removeItem = (itemId) => {
         payload: itemId
     };
 };
-
-// Add more actions as needed, such as updating item quantity or clearing the cart
