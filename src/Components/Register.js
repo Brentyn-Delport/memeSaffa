@@ -5,11 +5,11 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Modal, Button, Form } from "react-bootstrap";
-import { hideModal } from "../redux/modalActions"; 
-import { registerUser } from "../redux/authActions"; 
+import { hideModal } from "../redux/modalActions";
+import { registerUser } from "../redux/authActions";
 
-const Register = () => {
-  // Redux setup
+const Register = ({ setRegisteredUsers }) => {
+  // Redux setup for dispatching actions and accessing state
   const dispatch = useDispatch();
   const showRegister = useSelector((state) => state.modal.showRegister);
 
@@ -24,15 +24,15 @@ const Register = () => {
   const [errorMessages, setErrorMessages] = useState({
     email: "",
     password: "",
-    general: "", // This could be for any general registration error
+    general: "", // General error message for any other errors
   });
 
-  // Handle closing the modal
+  // Function to close the modal
   const handleClose = () => {
     dispatch(hideModal());
   };
 
-  // Basic validation check for email
+  // Function to validate email format
   const isValidEmail = (email) => {
     return /\S+@\S+\.\S+/.test(email);
   };
@@ -72,6 +72,10 @@ const Register = () => {
       }));
       return;
     }
+
+    // Add user to registered users state in App.js
+    setRegisteredUsers((prevUsers) => [...prevUsers, { username, password }]);
+    handleClose();
 
     // Dispatch action to update state with user's details
     dispatch(registerUser({ firstName, surname, username, email, password }));
