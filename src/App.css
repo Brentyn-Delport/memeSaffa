@@ -303,3 +303,9 @@ p {
   color: #ffb612 !important;
   height: 42px !important;
 }
+
+/* Styling shipping info button */
+.info-button {
+color: #ffb612;
+font-weight: bolder;
+}
