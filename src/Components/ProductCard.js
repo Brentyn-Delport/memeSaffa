@@ -125,40 +125,42 @@ const ProductCard = ({ product }) => {
           />
         </div>
 
-   {/* Shipping Method - Radios for each shipping method */}
-<div className="shipping">
-  <h6>
-    Shipping Method: 
-    {/* Help/Info Icon with tooltip and accessibility features */}
-    <span 
-      onClick={() => setShowModal(true)}
-      role="button" 
-      aria-label="Information about shipping methods"
-      title="Click for more information on shipping methods"
-      style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate clickability
-      className="info-button"
-    >
-     Info ℹ️ <span className="visually-hidden">Info</span> {/* Visually hidden text for screen readers */}
-    </span>
-  </h6>
-  <Form>
-    {[
-      { name: "Post Net", value: "Post Net" },
-      { name: "Pargo", value: "Pargo" },
-      { name: "Budget Courier", value: "Budget Courier" },
-    ].map((method) => (
-      <Form.Check
-        type="radio"
-        label={method.name}
-        name="shippingMethod"
-        value={method.value}
-        checked={selectedShipping === method.value}
-        onChange={() => setSelectedShipping(method.value)}
-        key={method.value}
-      />
-    ))}
-  </Form>
-</div>
+        {/* Shipping Method - Radios for each shipping method */}
+        <div className="shipping">
+          <h6>
+            Shipping Method:
+            {/* Help/Info Icon with tooltip and accessibility features */}
+            {/* This was originally included, however, i have added extra feautures to make it more clear to the user */}
+            <span
+              onClick={() => setShowModal(true)}
+              role="button"
+              aria-label="Information about shipping methods"
+              title="Click for more information on shipping methods"
+              style={{ cursor: "pointer" }} // Change cursor to pointer to indicate clickability
+              className="info-button"
+            >
+              Info ℹ️ <span className="visually-hidden">Info</span>{" "}
+              {/* Visually hidden text for screen readers */}
+            </span>
+          </h6>
+          <Form>
+            {[
+              { name: "Post Net", value: "Post Net" },
+              { name: "Pargo", value: "Pargo" },
+              { name: "Budget Courier", value: "Budget Courier" },
+            ].map((method) => (
+              <Form.Check
+                type="radio"
+                label={method.name}
+                name="shippingMethod"
+                value={method.value}
+                checked={selectedShipping === method.value}
+                onChange={() => setSelectedShipping(method.value)}
+                key={method.value}
+              />
+            ))}
+          </Form>
+        </div>
 
         {/* Various Modals for additional information and actions */}
         {/* Shipping Information Modal */}
