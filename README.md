@@ -8,28 +8,39 @@ Meme SAFFA is a web application designed to showcase and sell South African them
 
 - Browse meme merchandise
 - Add items to the shopping cart
-- Chekout items from the shopping cart
+- Checkout items from the shopping cart
 - User authentication: Sign In and Register
 - Responsive design for various devices
 - Contact page with office location and contact details
 
+## Technologies
+
+- React
+- Redux for state management
+- React Bootstrap for styling
+- React Router for navigation
+
 ## Installation
 
-To run Meme SAFFA on your local machine, follow these steps after unzipping the project folder:
-
-1. **Navigate to the Project Folder:**
-
-   Open your command line interface (CLI), and change directories (cd) into your project folder.
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/Brentyn-Delport/meme-sa.git
+   ```
+   Navigate to the Project Folder:
+   ```sh
+   cd path/to/meme-saffa-app
+   ```
 
 2. **Install Dependencies:**
-
-   Run `npm install` to install all required dependencies.
+   ```sh
+   npm install
+   ```
 
 3. **Start the Application:**
-
-   Execute `npm start` in your CLI.
-
-This will launch the app in your default browser at `http://localhost:3000`.
+   ```sh
+   npm start
+   ```
+   This will launch the app in your default browser at http://localhost:3000.
 
 ## Usage
 
@@ -40,13 +51,6 @@ This will launch the app in your default browser at `http://localhost:3000`.
 - Visit the cart page to review items before checkout.
 - Proceed to the Checkout page for payment and shipping details.
 - Contact us through the Contact page for any inquiries or support.
-
-## Technologies
-
-- React
-- Redux for state management
-- React Bootstrap for styling
-- React Router for navigation
 
 ## Testing
 
@@ -76,13 +80,27 @@ The tests are designed to validate the following functionalities:
 
 Each test will output whether it passed or failed, allowing you to ensure the cart's functionality is intact and behaves as expected.
 
+## Building for Production
+
+Run `npm run build` to build the app for production to the build folder.
+
+## Deployment
+
+Refer to the deployment section for more information on deploying the application.
+
 ## Acknowledgments
 
 - South African meme community
 - React and Redux documentation
 - Memes sourced from supermeme.ai
 
+## Learn More
+
+For more information on React and Create React App:
+
+- [Create React App documentation](https://create-react-app.dev/docs/getting-started/).
+- [React documentation](https://reactjs.org/).
+
 ## Note to Users
 
-This application is currently hosted locally and shared via a zip folder. Ensure you have Node.js and npm installed on your machine to run the project successfully. 
-# memeSaffa
+This application is developed with Node.js and npm. Ensure these are installed on your machine to run the project successfully. The application is in a developmental stage and may undergo frequent updates.
