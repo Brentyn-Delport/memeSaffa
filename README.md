@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# Meme SAFFA App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+Meme SAFFA is a web application designed to showcase and sell South African themed memes and merchandise. This platform allows users to browse a selection of meme-related products, add them to a cart, and proceed through a checkout process.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Browse meme merchandise
+- Add items to the shopping cart
+- Chekout items from the shopping cart
+- User authentication: Sign In and Register
+- Responsive design for various devices
+- Contact page with office location and contact details
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To run Meme SAFFA on your local machine, follow these steps after unzipping the project folder:
 
-### `npm test`
+1. **Navigate to the Project Folder:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   Open your command line interface (CLI), and change directories (cd) into your project folder.
 
-### `npm run build`
+2. **Install Dependencies:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   Run `npm install` to install all required dependencies.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. **Start the Application:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   Execute `npm start` in your CLI.
 
-### `npm run eject`
+This will launch the app in your default browser at `http://localhost:3000`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Usage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- View top memes and our top sellers on the Home page.
+- Navigate to the Merchandise page to see all available products.
+- Click on any product to add it to the cart.
+- Sign in or register to proceed with adding items to the cart.
+- Visit the cart page to review items before checkout.
+- Proceed to the Checkout page for payment and shipping details.
+- Contact us through the Contact page for any inquiries or support.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Technologies
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- React
+- Redux for state management
+- React Bootstrap for styling
+- React Router for navigation
 
-## Learn More
+## Testing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This project includes unit tests for its Redux actions and reducers to ensure the shopping cart feature works as expected.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Running Tests
 
-### Code Splitting
+To run the test suite, execute the following command in your CLI:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+`npm test`
 
-### Analyzing the Bundle Size
+This command will initiate the test runner and execute all tests found in the `__tests__` directory.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### What to Expect
 
-### Making a Progressive Web App
+The tests are designed to validate the following functionalities:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Cart Actions:**
+  - Adding an item to the cart (`addItem` action).
+  - Removing an item from the cart (`removeItem` action).
 
-### Advanced Configuration
+- **Cart Reducer:**
+  - Returning the initial state when no action is given.
+  - Handling adding an item to the cart.
+  - Handling removing an item from the cart.
+  - Calculating the total price correctly.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Each test will output whether it passed or failed, allowing you to ensure the cart's functionality is intact and behaves as expected.
 
-### Deployment
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- South African meme community
+- React and Redux documentation
+- Memes sourced from supermeme.ai
 
-### `npm run build` fails to minify
+## Note to Users
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This application is currently hosted locally and shared via a zip folder. Ensure you have Node.js and npm installed on your machine to run the project successfully. 
+# memeSaffa
